@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--  character encoding for the HTML document -->
+    <meta charset="UTF-8">
+
+    <!-- responsive "meta" tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Reset stylesheet-->
+    <link rel="stylesheet" href="./Assets/CSS/reset.css">
+
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <!--Bootstrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!--CSS Local Stylesheet link-->
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+
+    <!-- Webpage Title -->
+    <title>Mr. Weather Guru</title>
+
+</head>
+
+<body>
+
+    <div id="body">
+
+        <!-- Header -->
+        <header class="mb-2">
+
+            <!-- h1 header tag -->
+            <h1>Weather Dashboard</h1>
+
+        </header>
+        <!-- Header -->
+
+        <!-- Main "div" -->
+        <div class="container-fluid">
+
+            <!-- div "class" row -->
+            <div class="row">
+
+                <!-- "aside" tag -->
+                <aside class="col-sm-4 col-md-3">
+
+                    <!--Search for city section -->
+                    <form>
+
+                        <!-- ???? -->
+                        <div class="form-group">
+
+                            <!-- Title of serch section -->
+                            <label for="searchCity">Search for a City:</label>
+
+                            <!-- serch bar "div" -->
+                            <div class="input-group mb-3">
+
+                                <!-- Input bar -->
+                                <input type="text" class="form-control" id="city" placeholder="City name">
+
+                                <!-- search "Button" -->
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+
+                            </div>
+
+                            <!-- ?????? -->
+                            <div class="feedback"></div>
+
+                        </div>
+
+                    </form>
+                    <!--Search for city section -->
+
+                    <!-- Search "history" -->
+                    <div>
+                        <ul class="list-group" id="search-history">
+                        </ul>
+                    </div>
+
+
+                </aside>
+                <!-- "aside" tag -->
+
+                <!-- "Weather" section -->
+                <div class="col-sm-8 col-md-9">
+
+                    <!-- Weather Info -->
+                    <div class="border mb-2 p-3">
+
+                        <!-- Title of section -->
+                        <h2>
+                            <span id="cityName">Current Weather</span>
+                            <span id="date"></span><span id="iconWeather"></span>
+                        </h2>
+
+                        <!-- Important facts of the weather -->
+                        <!-- Temperature -->
+                        <p class="current-stats">
+                            Temperature:
+                            <span id="temperature"></span>&#8451;
+                        </p>
+
+                        <!-- Humidity -->
+                        <p class="current-stats">
+                            Humity:
+                            <span id="humidity"></span>%;
+                        </p>
+
+                        <!-- Wind Speed -->
+                        <p class="current-stats">
+                            Wind Speed:
+                            <span id="wind-speed"></span>km/h;
+                        </p>
+
+                        <!-- uv-index -->
+                        <p class="current-stats">
+                            UV Index:
+                            <span id="uv-index" class="rounded-sm p-2"></span>
+                        </p>
+
+                        <!-- Important facts of the weather -->
+
+                    </div>
+                    <!-- Weather Info -->
+
+                    <!-- 5 day forecast -->
+                    <div class="p-3">
+
+                        <!-- Title of section -->
+                        <h3>Five Day Forecast</h3>
+
+                        <!-- weekly "div" -->
+                        <div id="weekly-forecast" class="row"></div>
+
+                    </div>
+                    <!-- 5 day forecast -->
+
+                </div>
+                <!-- "Weather" section -->
+
+            </div>
+            <!-- div "class" row -->
+
+        </div>
+        <!-- Main "div" -->
+
+    </div>
+
+    <!-- JS files -->
+
+    <!-- script jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- script Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <!-- Local JS file -->
+    <script src="./Assets/JS/script.js"></script>
+
+    <!-- JS files -->
+
+</body>
+
+</html>
