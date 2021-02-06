@@ -158,7 +158,7 @@ $(document).ready(function () {
                 // console.log(groupedForecast);
 
                 // check the first if the first entry the time of the day is greater than 12H 
-                // if it is greater than 12 H, then the startdate for the 5 day forecast will be th following day
+                // if it is greater than 12 H, then the startdate for the 5 day forecast will be the following day
                 // if not, the first day of the 5 day forecast will be of the same day. 
                 // If we were to try to get the forecast for the 5 following days, the last day would not have pertinent information (e.g. before 9 am)
                 if (parseInt(moment.unix(forecast[0].dt + data.city.timezone).utc().format("HH")) > 12) {
