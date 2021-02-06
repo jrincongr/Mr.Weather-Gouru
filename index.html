@@ -1,72 +1,123 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8" />
+    <!--Reset stylesheet-->
+    <link rel="stylesheet" href="./assets/css/reset.css">
 
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Bootstrap links-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Weather Guru</title>
+    <!--My Stylesheet link-->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="./Assets/CSS/style.css" />
-
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <header class="header">
-        <h1>Weather Guru</h1>
-    </header>
+    <div id="body">
+        <!--Header starts here-->
+        <header class="mb-2">
+            <h1>Weather Dashboard</h1>
+        </header>
+        <!--Header ends here-->
 
-    <div class="container">
+        <!--Main content starts here-->
+        <div class="container-fluid">
+            <div class="row">
 
-        <div class="row">
-            <div class="col-lg-3 border-right border-silver" id="cityCol">
-                <br />
-                <h3>Search for a City :</h3>
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control float-left mr-ms-2" type="text" aria-label="Search" />
-                    <button class="btn btn-outline-primary my-2 my-ms-0" type="submit"><i class="fa fa-search"></i>
-                    </button>
-                </form>
-                <div id="cityViewed" class="cityViewed"></div>
-            </div>
-            <div class="col-lg-9 pb-5">
-                <div class="row" id="todayWeather">
-                    <div class="col-lg-12">
-                        <h2 class="current-city">City (Month DD, YYYY)</h2>
-                        <p id="temp">Temperature:</p>
-                        <p id="hum">Humidity:</p>
-                        <p id="windy">Wind speed:</p>
-                        <p id="uv">UV-index:</p>
+                <!--Side section starts here-->
+                <div class="col-sm-4 col-md-3">
+
+                    <!--Search bar starts here-->
+                    <form>
+                        <div class="form-group">
+                            <label for="searchCity">Search for a City</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="city" placeholder="City name">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="feedback">Not a city!</div>
+                        </div>
+                    </form>
+                    <!--Search bar ends here-->
+
+                    <!--Search history starts here-->
+                    <div>
+                        <ul class="list-group" id="search-history">
+                        </ul>
                     </div>
+                    <!--Search history ends here-->
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h2>5-Day Forecast:</h2>
+                <!--Side section ends here-->
+
+                <!--Weather display section starts here-->
+                <div class="col-sm-8 col-md-9">
+
+                    <!--Current weather section starts here-->
+                    <div class="border mb-2 p-3">
+                        <h2>
+                            <span id="cityName">Current Weather</span>
+                            <span id="date"></span><span id="iconWeather"></span>
+                        </h2>
+                        <p class="current-stats">
+                            Temperature:
+                            <span id="temperature"></span>&#8451;
+                        </p>
+                        <p class="current-stats">
+                            Humity:
+                            <span id="humidity"></span>%;
+                        </p>
+                        <p class="current-stats">
+                            Wind Speed:
+                            <span id="wind-speed"></span>km/h;
+                        </p>
+                        <p class="current-stats">
+                            UV Index:
+                            <span id="uv-index" class="rounded-sm p-2"></span>
+                        </p>
                     </div>
+                    <!--Current weather section ends here-->
+
+                    <!--5 day forcast section starts here-->
+                    <div class="p-3">
+                        <h3>5-day forecast</h3>
+                        <div id="weekly-forecast" class="row">
+                        </div>
+                    </div>
+                    <!--5 day forcast section ends here-->
+
                 </div>
-                <div class="row justify-content-between" id="forecast">
-                </div>
+                <!--Weather display section starts here-->
+
             </div>
         </div>
-    </div>
-    </div>
 
+    </div>
+    <!--Main content ends here-->
 
+    <!--javascript files-->
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--Moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Assets/JS/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
+    <!--my script file-->
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
